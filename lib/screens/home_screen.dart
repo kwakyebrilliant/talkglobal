@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:talkglobal/screens/random_circles.dart';
 
 class HomeScreen extends StatefulWidget {
   final VoidCallback showPromptScreen;
@@ -39,9 +40,10 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // First Expanded
-            Expanded(
+            const Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(top: 15.0),
+                padding: EdgeInsets.only(top: 40.0, left: 16.0, right: 16.0),
+                child: RandomCircles(),
               ),
             ),
 
