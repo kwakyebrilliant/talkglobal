@@ -23,6 +23,51 @@ class _PromptScreenState extends State<PromptScreen> {
             ],
           ),
         ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 50.0, left: 16.0, right: 16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFFFCCCC).withOpacity(0.3),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Container(
+                      height: 30.0,
+                      width: 30.0,
+                      padding: const EdgeInsets.all(2.0),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFFFFFF).withOpacity(0.3),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          width: 0.1,
+                          color: const Color(0xFFFFCCCC).withOpacity(0.8),
+                        ),
+                      ),
+
+                      // Arrow forward centered
+                      child: Center(
+                        // Arrow forward
+                        child: Transform.rotate(
+                          angle: -0.8,
+                          child: const Icon(
+                            Icons.send,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
