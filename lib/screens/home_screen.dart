@@ -35,25 +35,23 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
 
-        // Column starts here
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // First Expanded
-            const Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(top: 60.0, left: 16.0, right: 16.0),
+        // Column for contents in padding
+        child: Padding(
+          padding: const EdgeInsets.only(top: 80.0, left: 16.0, right: 16.0),
+
+          // Column starts here
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // First Expanded
+              const Expanded(
                 child: Center(
                   child: CountryRectangles(),
                 ),
               ),
-            ),
 
-            // Second expanded
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 40.0),
-                // Column starts here
+              // Second expanded
+              Expanded(
                 child: Column(
                   children: [
                     // Richtext here
@@ -140,10 +138,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                // Column ends here
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         // Column ends here
       ),

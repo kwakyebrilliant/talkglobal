@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-
 import 'package:google_fonts/google_fonts.dart';
 
 class CountryRectangles extends StatefulWidget {
@@ -24,51 +23,77 @@ class _CountryRectanglesState extends State<CountryRectangles> {
     {'countryName': 'Saudi', 'countryImage': 'assets/images/arabic.png'},
   ];
 
+  String? selectedCountry;
+  Color? backgroundColor;
+
+  @override
+  void initState() {
+    super.initState();
+    _randomize();
+  }
+
+  void _randomize() {
+    setState(() {
+      selectedCountry =
+          countryData[random.nextInt(countryData.length)]['countryName'];
+      backgroundColor =
+          Color((random.nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 8.0,
-      runSpacing: 8.0,
-      children: countryData.map((country) {
-        return Card(
-          elevation: 4,
-          color: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.0),
-            side: BorderSide(
-              color: const Color(0xFFFFCCCC).withOpacity(0.8),
-              width: 0.4,
+    return RefreshIndicator(
+      onRefresh: () async {
+        _randomize();
+      },
+      child: Wrap(
+        spacing: 8.0,
+        runSpacing: 8.0,
+        children: countryData.map((country) {
+          bool isSelected = country['countryName'] == selectedCountry;
+          return Card(
+            elevation: 4,
+            color: isSelected ? backgroundColor : Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0),
+              side: BorderSide(
+                color: isSelected
+                    ? Colors.transparent
+                    : const Color(0xFFFFCCCC).withOpacity(0.8),
+                width: 0.4,
+              ),
             ),
-          ),
-          child: Container(
-            width: 180.0,
-            padding: const EdgeInsets.symmetric(
-              vertical: 20.0,
-              horizontal: 15.0,
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset(
-                  country['countryImage']!,
-                  height: 20,
-                  fit: BoxFit.cover,
-                ),
-                const SizedBox(width: 8.0),
-                Text(
-                  country['countryName']!,
-                  style: GoogleFonts.poppins(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w300,
-                    color: const Color(0xFFFFFFFF),
+            child: Container(
+              width: 180.0,
+              padding: const EdgeInsets.symmetric(
+                vertical: 20.0,
+                horizontal: 15.0,
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    country['countryImage']!,
+                    height: 20,
+                    fit: BoxFit.cover,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+                  const SizedBox(width: 8.0),
+                  Text(
+                    country['countryName']!,
+                    style: GoogleFonts.poppins(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w300,
+                      color: const Color(0xFFFFFFFF),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
-          ),
-        );
-      }).toList(),
+          );
+        }).toList(),
+      ),
     );
   }
 }
