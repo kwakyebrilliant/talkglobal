@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:talkglobal/screens/random_circles.dart';
+import 'package:talkglobal/screens/country_rectangles.dart';
 
 class HomeScreen extends StatefulWidget {
   final VoidCallback showPromptScreen;
@@ -42,8 +42,10 @@ class _HomeScreenState extends State<HomeScreen> {
             // First Expanded
             const Expanded(
               child: Padding(
-                padding: EdgeInsets.only(top: 40.0, left: 16.0, right: 16.0),
-                child: RandomCircles(),
+                padding: EdgeInsets.only(top: 60.0, left: 16.0, right: 16.0),
+                child: Center(
+                  child: CountryRectangles(),
+                ),
               ),
             ),
 
