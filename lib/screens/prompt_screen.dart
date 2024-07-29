@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PromptScreen extends StatefulWidget {
   final VoidCallback showHomeScreen;
@@ -31,6 +32,17 @@ class _PromptScreenState extends State<PromptScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: Text(
+                      "Translate",
+                      style: GoogleFonts.poppins(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFFFFFFFF),
+                      ),
+                    ),
+                  ),
                   Container(
                     padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
