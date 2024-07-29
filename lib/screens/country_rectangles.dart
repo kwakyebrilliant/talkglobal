@@ -48,6 +48,7 @@ class _CountryRectanglesState extends State<CountryRectangles> {
 
   @override
   Widget build(BuildContext context) {
+    // Method to refresh the widget by randomizing the selected country and background color
     return RefreshIndicator(
       onRefresh: () async {
         _randomize();
@@ -55,10 +56,15 @@ class _CountryRectanglesState extends State<CountryRectangles> {
       child: Wrap(
         spacing: 8.0,
         runSpacing: 8.0,
+
+        // Iterate over the list of country data to create a list of cards
         children: countryData.map((country) {
+          // Check if the current country is the selected one
           bool isSelected = country['countryName'] == selectedCountry;
           return Card(
             elevation: 4,
+
+            // Set the card color based on whether it is selected or not
             color: isSelected ? backgroundColor : Colors.transparent,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0),
@@ -78,12 +84,15 @@ class _CountryRectanglesState extends State<CountryRectangles> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  // Display the country image
                   Image.asset(
                     country['countryImage']!,
                     height: 20,
                     fit: BoxFit.cover,
                   ),
                   const SizedBox(width: 8.0),
+
+                  // Display the country name using Google Fonts
                   Text(
                     country['countryName']!,
                     style: GoogleFonts.poppins(
