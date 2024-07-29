@@ -10,8 +10,10 @@ class CountryRectangles extends StatefulWidget {
 }
 
 class _CountryRectanglesState extends State<CountryRectangles> {
+  // Random object to generate random numbers
   final Random random = Random();
 
+  // List of maps containing country names and their corresponding image paths
   final List<Map<String, String>> countryData = [
     {'countryName': 'USA', 'countryImage': 'assets/images/usa.png'},
     {'countryName': 'Russia', 'countryImage': 'assets/images/russia.png'},
@@ -23,15 +25,18 @@ class _CountryRectanglesState extends State<CountryRectangles> {
     {'countryName': 'Saudi', 'countryImage': 'assets/images/arabic.png'},
   ];
 
+  // Variables to store the selected country and background color
   String? selectedCountry;
   Color? backgroundColor;
 
   @override
   void initState() {
     super.initState();
+    // Randomize the selected country and background color on initialization
     _randomize();
   }
 
+  // Method to randomize the selected country and background color
   void _randomize() {
     setState(() {
       selectedCountry =
