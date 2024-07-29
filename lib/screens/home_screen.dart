@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // Second expanded
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(top: 15.0),
+                padding: const EdgeInsets.only(top: 40.0),
                 // Column starts here
                 child: Column(
                   children: [
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     // Container for arrow forward in a padding
                     Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
+                      padding: const EdgeInsets.only(top: 40.0),
 
                       // Container for arrow forward
                       child: GestureDetector(
