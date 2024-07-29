@@ -14,6 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Container for all contents
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -99,22 +100,25 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-
                     // Richtext ends here
 
                     // Container for arrow forward in a padding
                     Padding(
                       padding: const EdgeInsets.only(top: 40.0),
 
-                      // Container for arrow forward
+                      // Container for arrow forward in GestureDetector
                       child: GestureDetector(
                         onTap: widget.showPromptScreen,
+
+                        // Container for arrow forward with opacity
                         child: Container(
                           padding: const EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                             color: const Color(0xFFFFCCCC).withOpacity(0.3),
                             shape: BoxShape.circle,
                           ),
+
+                          // Container for arrow forward
                           child: Container(
                             height: 50.0,
                             width: 50.0,
