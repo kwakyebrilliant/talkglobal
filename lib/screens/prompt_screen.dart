@@ -103,7 +103,7 @@ class _PromptScreenState extends State<PromptScreen> {
               // Container for what to translate
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.0),
                   border: Border.all(
@@ -115,7 +115,19 @@ class _PromptScreenState extends State<PromptScreen> {
                 // Column for translate contents
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [],
+                  children: [
+                    TextFormField(
+                      maxLines: 8,
+                      decoration: InputDecoration(
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        labelStyle: GoogleFonts.poppins(
+                          color: const Color(0xFF000000),
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
