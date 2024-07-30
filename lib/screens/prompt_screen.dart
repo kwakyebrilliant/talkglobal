@@ -13,6 +13,7 @@ class _PromptScreenState extends State<PromptScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Container for all contents
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -24,16 +25,24 @@ class _PromptScreenState extends State<PromptScreen> {
             ],
           ),
         ),
+
+        // Padding around contnets
         child: Padding(
           padding: const EdgeInsets.only(top: 50.0, left: 16.0, right: 16.0),
+
+          // Column starts here
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Row for translate text and send icon
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  // Translate text in a padding
                   Padding(
                     padding: const EdgeInsets.only(right: 8.0),
+
+                    // Translate text here
                     child: Text(
                       "Translate",
                       style: GoogleFonts.poppins(
@@ -43,6 +52,8 @@ class _PromptScreenState extends State<PromptScreen> {
                       ),
                     ),
                   ),
+
+                  // Conatiner for send icon
                   Container(
                     padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
@@ -62,9 +73,9 @@ class _PromptScreenState extends State<PromptScreen> {
                         ),
                       ),
 
-                      // Arrow forward centered
+                      // Send centered
                       child: Center(
-                        // Arrow forward
+                        // Send forward
                         child: Transform.rotate(
                           angle: -0.8,
                           child: const Icon(
@@ -76,7 +87,7 @@ class _PromptScreenState extends State<PromptScreen> {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
