@@ -32,7 +32,7 @@ class _PromptScreenState extends State<PromptScreen> {
 
           // Column starts here
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Row for translate text and send icon
               Row(
