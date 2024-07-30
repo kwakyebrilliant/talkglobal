@@ -95,6 +95,30 @@ class _PromptScreenState extends State<PromptScreen> {
 
             // Dropdown for country selection
             const LanguageDropdown(),
+
+            // Container for what to translate in padding
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+
+              // Container for what to translate
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.all(8.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  border: Border.all(
+                    color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                    width: 0.1,
+                  ),
+                ),
+
+                // Column for translate contents
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [],
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -29,73 +29,66 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
         Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Container(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
         decoration: BoxDecoration(
-          color: const Color(0xFF6D1B7B).withOpacity(0.3),
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(20.0),
+          color: const Color(0xFFFFFFFF),
+          border: Border.all(
+            color: const Color(0xFF6D1B7B).withOpacity(0.8),
+            width: 0.1,
+          ),
         ),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
-            color: const Color(0xFFFFFFFF),
-            border: Border.all(
-              color: const Color(0xFF6D1B7B).withOpacity(0.8),
-              width: 0.1,
+        // Dropdown for country selection
+        child: DropdownButton<String>(
+          value: selectedCountry,
+          hint: Text(
+            "Select Language",
+            style: GoogleFonts.poppins(
+              fontSize: 16.0,
+              color: const Color(0xFF000000),
             ),
           ),
-          // Dropdown for country selection
-          child: DropdownButton<String>(
-            value: selectedCountry,
-            hint: Text(
-              "Select Language",
-              style: GoogleFonts.poppins(
-                fontSize: 16.0,
-                color: const Color(0xFF000000),
-              ),
+          icon: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Icon(
+              Icons.keyboard_arrow_down_rounded,
+              color: const Color(0xFF6D1B7B).withOpacity(0.3),
             ),
-            icon: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Icon(
-                Icons.keyboard_arrow_down_rounded,
-                color: const Color(0xFF6D1B7B).withOpacity(0.3),
-              ),
-            ),
-            underline: Container(
-              color: Colors.transparent,
-            ),
-            dropdownColor: const Color(0xFF6D1B7B),
-            items: languageData.map((country) {
-              return DropdownMenuItem<String>(
-                value: country['countryLanguage'],
-                child: Row(
-                  children: [
-                    Image.asset(
-                      country['countryImage']!,
-                      width: 24,
-                      height: 24,
-                      fit: BoxFit.cover,
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      country['countryLanguage']!,
-                      style: GoogleFonts.poppins(
-                        fontSize: 16.0,
-                        color: selectedCountry == country['countryLanguage']
-                            ? const Color(0xFF000000)
-                            : const Color(0xFFFFFFFF),
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            }).toList(),
-            onChanged: (newValue) {
-              setState(() {
-                selectedCountry = newValue;
-              });
-            },
           ),
+          underline: Container(
+            color: Colors.transparent,
+          ),
+          dropdownColor: const Color(0xFFFFFFFF),
+          items: languageData.map((country) {
+            return DropdownMenuItem<String>(
+              value: country['countryLanguage'],
+              child: Row(
+                children: [
+                  Image.asset(
+                    country['countryImage']!,
+                    width: 24,
+                    height: 24,
+                    fit: BoxFit.cover,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    country['countryLanguage']!,
+                    style: GoogleFonts.poppins(
+                      fontSize: 16.0,
+                      color: selectedCountry == country['countryLanguage']
+                          ? const Color(0xFF000000)
+                          : const Color(0xFF6D1B7B).withOpacity(0.8),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }).toList(),
+          onChanged: (newValue) {
+            setState(() {
+              selectedCountry = newValue;
+            });
+          },
         ),
       ),
     );
