@@ -10,16 +10,16 @@ class PromptScreen extends StatefulWidget {
 }
 
 class _PromptScreenState extends State<PromptScreen> {
-  // List of maps containing country names and their corresponding image paths
-  final List<Map<String, String>> countryData = [
-    {'countryName': 'USA', 'countryImage': 'assets/images/usa.png'},
-    {'countryName': 'Russia', 'countryImage': 'assets/images/russia.png'},
-    {'countryName': 'Italy', 'countryImage': 'assets/images/italy.png'},
-    {'countryName': 'Germany', 'countryImage': 'assets/images/germany.png'},
-    {'countryName': 'France', 'countryImage': 'assets/images/france.png'},
-    {'countryName': 'China', 'countryImage': 'assets/images/china.png'},
-    {'countryName': 'England', 'countryImage': 'assets/images/britain.png'},
-    {'countryName': 'Saudi', 'countryImage': 'assets/images/arabic.png'},
+  // List of maps containing country languages and their corresponding image paths
+  final List<Map<String, String>> languageData = [
+    {'countryLanguage': 'USA', 'countryImage': 'assets/images/usa.png'},
+    {'countryLanguage': 'Russia', 'countryImage': 'assets/images/russia.png'},
+    {'countryLanguage': 'Italy', 'countryImage': 'assets/images/italy.png'},
+    {'countryLanguage': 'Germany', 'countryImage': 'assets/images/germany.png'},
+    {'countryLanguage': 'France', 'countryImage': 'assets/images/france.png'},
+    {'countryLanguage': 'China', 'countryImage': 'assets/images/china.png'},
+    {'countryLanguage': 'England', 'countryImage': 'assets/images/britain.png'},
+    {'countryLanguage': 'Saudi', 'countryImage': 'assets/images/arabic.png'},
   ];
 
   String? selectedCountry;
@@ -126,7 +126,7 @@ class _PromptScreenState extends State<PromptScreen> {
                     child: DropdownButton<String>(
                       value: selectedCountry,
                       hint: Text(
-                        "Select Country",
+                        "Select Language",
                         style: GoogleFonts.poppins(
                           fontSize: 16.0,
                           color: const Color(0xFFFFFFFF),
@@ -144,9 +144,9 @@ class _PromptScreenState extends State<PromptScreen> {
                         color: Colors.transparent,
                       ),
                       dropdownColor: const Color(0xFF6D1B7B),
-                      items: countryData.map((country) {
+                      items: languageData.map((country) {
                         return DropdownMenuItem<String>(
-                          value: country['countryName'],
+                          value: country['countryLanguage'],
                           child: Row(
                             children: [
                               Image.asset(
@@ -157,7 +157,7 @@ class _PromptScreenState extends State<PromptScreen> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                country['countryName']!,
+                                country['countryLanguage']!,
                                 style: GoogleFonts.poppins(
                                   fontSize: 16.0,
                                   color: const Color(0xFFFFFFFF),
