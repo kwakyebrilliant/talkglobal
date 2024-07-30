@@ -93,9 +93,6 @@ class _PromptScreenState extends State<PromptScreen> {
               ],
             ),
 
-            // Dropdown for country selection
-            const LanguageDropdown(),
-
             // Container for what to translate in padding
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
@@ -116,6 +113,7 @@ class _PromptScreenState extends State<PromptScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Textformfield for text content to translate
                     TextFormField(
                       maxLines: 8,
                       decoration: InputDecoration(
@@ -125,6 +123,41 @@ class _PromptScreenState extends State<PromptScreen> {
                           color: const Color(0xFF000000),
                           fontSize: 16.0,
                         ),
+                      ),
+                    ),
+
+                    //
+                    Container(
+                      padding: const EdgeInsets.only(top: 12.0),
+                      decoration: BoxDecoration(
+                        border: Border(
+                          top: BorderSide(
+                            color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                            width: 0.1,
+                          ),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // Dropdown for country selection
+                          const LanguageDropdown(),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.mic_outlined,
+                                color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                              ),
+                              const SizedBox(
+                                width: 8.0,
+                              ),
+                              Icon(
+                                Icons.volume_up_outlined,
+                                color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ],
