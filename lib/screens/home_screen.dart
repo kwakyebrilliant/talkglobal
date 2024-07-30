@@ -14,18 +14,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFFFFFF),
       // Container for all contents
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF6D1B7B),
-              Color(0xFF000000),
-            ],
-          ),
-
           // Background image here
           image: DecorationImage(
             image: AssetImage(
@@ -61,40 +53,48 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: GoogleFonts.poppins(
                           height: 1.6,
                         ),
-                        children: const <InlineSpan>[
-                          TextSpan(
-                            text: 'Translate Every \n',
+                        children: <InlineSpan>[
+                          const TextSpan(
+                            text: 'Translate',
                             style: TextStyle(
                               fontSize: 32.0,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFFFFFFFF),
+                              color: Color(0xFF000000),
                             ),
                           ),
                           TextSpan(
+                            text: ' Every \n',
+                            style: TextStyle(
+                              fontSize: 32.0,
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xFF6D1B7B).withOpacity(0.3),
+                            ),
+                          ),
+                          const TextSpan(
                             text: 'Type Word \n',
                             style: TextStyle(
                               fontSize: 32.0,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFFFFFFFF),
+                              color: Color(0xFF000000),
                             ),
                           ),
-                          WidgetSpan(
+                          const WidgetSpan(
                             child: SizedBox(height: 35.0),
                           ),
-                          TextSpan(
+                          const TextSpan(
                             text: 'Help You Communicate In \n',
                             style: TextStyle(
                               fontSize: 14.0,
                               fontWeight: FontWeight.w300,
-                              color: Color(0xFFFFFFFF),
+                              color: Color(0xFF000000),
                             ),
                           ),
-                          TextSpan(
+                          const TextSpan(
                             text: 'Different Languages',
                             style: TextStyle(
                               fontSize: 14.0,
                               fontWeight: FontWeight.w300,
-                              color: Color(0xFFFFFFFF),
+                              color: Color(0xFF000000),
                             ),
                           ),
                         ],
@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           padding: const EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFFFCCCC).withOpacity(0.3),
+                            color: const Color(0xFF6D1B7B).withOpacity(0.3),
                             shape: BoxShape.circle,
                           ),
 
@@ -129,10 +129,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
 
                             // Arrow forward centered
-                            child: const Center(
+                            child: Center(
                               // Arrow forward
                               child: Icon(
                                 Icons.arrow_forward,
+                                color: const Color(0xFF6D1B7B).withOpacity(0.3),
                               ),
                             ),
                           ),

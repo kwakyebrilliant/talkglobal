@@ -31,16 +31,16 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
       child: Container(
         padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
-          color: const Color(0xFFFFCCCC).withOpacity(0.3),
+          color: const Color(0xFF6D1B7B).withOpacity(0.3),
           borderRadius: BorderRadius.circular(30.0),
         ),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            color: const Color(0xFFFFFFFF).withOpacity(0.3),
+            color: const Color(0xFFFFFFFF),
             border: Border.all(
-              color: const Color(0xFFFFCCCC).withOpacity(0.8),
+              color: const Color(0xFF6D1B7B).withOpacity(0.8),
               width: 0.1,
             ),
           ),
@@ -51,18 +51,17 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
               "Select Language",
               style: GoogleFonts.poppins(
                 fontSize: 16.0,
-                color: const Color(0xFFFFFFFF),
+                color: const Color(0xFF000000),
               ),
             ),
-            icon: const Padding(
-              padding: EdgeInsets.only(left: 8.0),
+            icon: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
               child: Icon(
                 Icons.keyboard_arrow_down_rounded,
-                color: Color(0xFFFFFFFF),
+                color: const Color(0xFF6D1B7B).withOpacity(0.3),
               ),
             ),
             underline: Container(
-              height: 2,
               color: Colors.transparent,
             ),
             dropdownColor: const Color(0xFF6D1B7B),
@@ -82,7 +81,9 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
                       country['countryLanguage']!,
                       style: GoogleFonts.poppins(
                         fontSize: 16.0,
-                        color: const Color(0xFFFFFFFF),
+                        color: selectedCountry == country['countryLanguage']
+                            ? const Color(0xFF000000)
+                            : const Color(0xFFFFFFFF),
                       ),
                     ),
                   ],

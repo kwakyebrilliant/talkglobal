@@ -65,13 +65,13 @@ class _CountryRectanglesState extends State<CountryRectangles> {
             elevation: 4,
 
             // Set the card color based on whether it is selected or not
-            color: isSelected ? backgroundColor : Colors.transparent,
+            color: isSelected ? backgroundColor : const Color(0xFFFFFFFF),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0),
               side: BorderSide(
                 color: isSelected
                     ? Colors.transparent
-                    : const Color(0xFFFFCCCC).withOpacity(0.8),
+                    : const Color(0xFF6D1B7B).withOpacity(0.8),
                 width: 0.4,
               ),
             ),
@@ -98,7 +98,9 @@ class _CountryRectanglesState extends State<CountryRectangles> {
                     style: GoogleFonts.poppins(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w300,
-                      color: const Color(0xFFFFFFFF),
+                      color: isSelected
+                          ? const Color(0xFFFFFFFF)
+                          : const Color(0xFF000000),
                     ),
                     textAlign: TextAlign.center,
                   ),
