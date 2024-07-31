@@ -66,19 +66,34 @@ class _PromptScreenState extends State<PromptScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Text Translation",
-                    style: GoogleFonts.poppins(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w300,
-                      color: const Color(0xFF000000),
-                    ),
-                  ),
-                  const Icon(
-                    Icons.text_fields,
-                    color: Color(0xFF000000),
-                    size: 24.0,
-                  ),
+                  _showColumn
+                      ? Text(
+                          "Voice Translation",
+                          style: GoogleFonts.poppins(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w300,
+                            color: const Color(0xFF000000),
+                          ),
+                        )
+                      : Text(
+                          "Text Translation",
+                          style: GoogleFonts.poppins(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w300,
+                            color: const Color(0xFF000000),
+                          ),
+                        ),
+                  _showColumn
+                      ? const Icon(
+                          Icons.mic_rounded,
+                          color: Color(0xFF000000),
+                          size: 24.0,
+                        )
+                      : const Icon(
+                          Icons.text_fields,
+                          color: Color(0xFF000000),
+                          size: 24.0,
+                        ),
                 ],
               ),
             ),
