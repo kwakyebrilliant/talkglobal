@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LanguageDropdown extends StatefulWidget {
-  const LanguageDropdown({super.key});
+  final ValueChanged<String?> onLanguageChanged;
+
+  const LanguageDropdown({Key? key, required this.onLanguageChanged})
+      : super(key: key);
 
   @override
   State<LanguageDropdown> createState() => _LanguageDropdownState();
 }
 
 class _LanguageDropdownState extends State<LanguageDropdown> {
-  // List of maps containing country languages and their corresponding image paths
   final List<Map<String, String>> languageData = [
     {'countryLanguage': 'USA', 'countryImage': 'assets/images/usa.png'},
     {'countryLanguage': 'Russia', 'countryImage': 'assets/images/russia.png'},
@@ -25,8 +27,7 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
 
   @override
   Widget build(BuildContext context) {
-    return // Dropdown for country selection
-        Container(
+    return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
@@ -36,7 +37,6 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
           width: 0.1,
         ),
       ),
-      // Dropdown for country selection
       child: DropdownButton<String>(
         value: selectedCountry,
         hint: Text(
@@ -89,6 +89,7 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
           setState(() {
             selectedCountry = newValue;
           });
+          widget.onLanguageChanged(newValue);
         },
       ),
     );
