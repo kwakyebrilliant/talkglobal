@@ -150,6 +150,7 @@ class _PromptScreenState extends State<PromptScreen> {
               padding: const EdgeInsets.only(top: 20.0),
               child: Container(
                 width: MediaQuery.of(context).size.width,
+                height: 223.0,
                 padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
@@ -202,6 +203,7 @@ class _PromptScreenState extends State<PromptScreen> {
               padding: const EdgeInsets.only(top: 20.0),
               child: Container(
                 width: MediaQuery.of(context).size.width,
+                height: 223.0,
                 padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
