@@ -154,72 +154,74 @@ class _PromptScreenState extends State<PromptScreen> {
             const TranslateContainer(),
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.symmetric(
-                  vertical: 10.0,
-                  horizontal: 50.0,
-                ),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF6D1B7B).withOpacity(0.6),
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 10.0,
+                      horizontal: 50.0,
+                    ),
+                    width: MediaQuery.of(context).size.width / 2 + 50,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF6D1B7B).withOpacity(0.6),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Icon(
-                          Icons.chat_bubble_rounded,
-                          color: Color(0xFFF0F0F0),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.chat_bubble_rounded,
+                              color: Color(0xFFF0F0F0),
+                            ),
+                            Text(
+                              'Text',
+                              style: GoogleFonts.poppins(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.w600,
+                                color: const Color(0xFFF0F0F0),
+                              ),
+                            ),
+                          ],
                         ),
-                        Text(
-                          'Text',
-                          style: GoogleFonts.poppins(
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.w600,
-                            color: const Color(0xFFF0F0F0),
-                          ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.mic_none_outlined,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            Text(
+                              'Speech',
+                              style: GoogleFonts.poppins(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.w300,
+                                color: const Color(0xFFF0F0F0),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    Container(
-                      decoration: const BoxDecoration(
-                        color: Color(0xFFFFFFFF),
-                        shape: BoxShape.circle,
-                      ),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Transform.rotate(
-                          angle: -1.56,
-                          child: Icon(
-                            Icons.send,
-                            color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                            size: 40.0,
-                          ),
-                        ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                        color: const Color(0xFF000080),
+                        borderRadius: BorderRadius.circular(12.0)),
+                    child: Transform.rotate(
+                      angle: -0.8,
+                      child: const Icon(
+                        Icons.send,
+                        color: Color(0xFFF0F0F0),
+                        size: 38.0,
                       ),
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.mic_none_outlined,
-                          color: Color(0xFFFFFFFF),
-                        ),
-                        Text(
-                          'Speech',
-                          style: GoogleFonts.poppins(
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.w300,
-                            color: const Color(0xFFF0F0F0),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],
