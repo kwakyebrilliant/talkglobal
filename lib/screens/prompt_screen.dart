@@ -156,8 +156,15 @@ class _PromptScreenState extends State<PromptScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // Dropdown for country selection
-                          const LanguageDropdown(),
+                          // Words count
+                          Text(
+                            '25/250 words',
+                            style: GoogleFonts.poppins(
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w300,
+                              color: const Color(0xFF000000),
+                            ),
+                          ),
                           Row(
                             children: [
                               Icon(
