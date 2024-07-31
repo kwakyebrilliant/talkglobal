@@ -28,7 +28,7 @@ class _PromptScreenState extends State<PromptScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
+      backgroundColor: const Color(0xFFF0F0F0),
       // Container for all contents
       body: Padding(
         padding: const EdgeInsets.only(top: 50.0, left: 16.0, right: 16.0),
@@ -102,10 +102,11 @@ class _PromptScreenState extends State<PromptScreen> {
                 width: MediaQuery.of(context).size.width,
                 padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(30.0),
+                  color: const Color(0xFFFFFFFF),
                   border: Border.all(
                     color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                    width: 0.1,
+                    width: 0.2,
                   ),
                 ),
 
@@ -133,7 +134,7 @@ class _PromptScreenState extends State<PromptScreen> {
                         border: Border(
                           top: BorderSide(
                             color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                            width: 0.1,
+                            width: 0.2,
                           ),
                         ),
                       ),
@@ -145,7 +146,7 @@ class _PromptScreenState extends State<PromptScreen> {
                           Row(
                             children: [
                               Icon(
-                                Icons.mic_outlined,
+                                Icons.volume_up_outlined,
                                 color: const Color(0xFF6D1B7B).withOpacity(0.8),
                               ),
                             ],
@@ -176,7 +177,7 @@ class _PromptScreenState extends State<PromptScreen> {
                 child: const Center(
                   // Swap icon
                   child: Icon(
-                    Icons.swap_horiz_rounded,
+                    Icons.swap_vert_rounded,
                     color: Color(0xFFFFFFFF),
                   ),
                 ),
@@ -188,10 +189,11 @@ class _PromptScreenState extends State<PromptScreen> {
               width: MediaQuery.of(context).size.width,
               padding: const EdgeInsets.all(12.0),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(30.0),
+                color: const Color(0xFFFFFFFF),
                 border: Border.all(
                   color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                  width: 0.1,
+                  width: 0.2,
                 ),
               ),
 
@@ -219,7 +221,7 @@ class _PromptScreenState extends State<PromptScreen> {
                       border: Border(
                         top: BorderSide(
                           color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                          width: 0.1,
+                          width: 0.2,
                         ),
                       ),
                     ),
@@ -228,20 +230,10 @@ class _PromptScreenState extends State<PromptScreen> {
                       children: [
                         // Dropdown for country selection
                         const LanguageDropdown(),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.mic_outlined,
-                              color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                            ),
-                            const SizedBox(
-                              width: 8.0,
-                            ),
-                            Icon(
-                              Icons.volume_up_outlined,
-                              color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                            ),
-                          ],
+
+                        Icon(
+                          Icons.volume_up_outlined,
+                          color: const Color(0xFF6D1B7B).withOpacity(0.8),
                         ),
                       ],
                     ),
