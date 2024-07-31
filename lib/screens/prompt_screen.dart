@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:talkglobal/utility/language_dropdown.dart';
+import 'package:talkglobal/utility/speech_translate.dart';
 import 'package:talkglobal/utility/text_translate.dart';
 
 class PromptScreen extends StatefulWidget {
@@ -25,6 +26,20 @@ class _PromptScreenState extends State<PromptScreen> {
   void _handleLanguageChangeTo(String? newCountry) {
     setState(() {
       selectedCountryTo = newCountry;
+    });
+  }
+
+  bool _showColumn = false;
+
+  void _showSpeechColumn() {
+    setState(() {
+      _showColumn = true;
+    });
+  }
+
+  void _showTextColumn() {
+    setState(() {
+      _showColumn = false;
     });
   }
 
@@ -129,7 +144,9 @@ class _PromptScreenState extends State<PromptScreen> {
                     width: 0.2,
                   ),
                 ),
-                child: const TextTranslate(),
+                child: _showColumn
+                    ? const SpeechTranslate()
+                    : const TextTranslate(),
               ),
             ),
             Padding(
@@ -179,7 +196,9 @@ class _PromptScreenState extends State<PromptScreen> {
                     width: 0.2,
                   ),
                 ),
-                child: const TextTranslate(),
+                child: _showColumn
+                    ? const SpeechTranslate()
+                    : const TextTranslate(),
               ),
             ),
             Padding(
@@ -203,15 +222,25 @@ class _PromptScreenState extends State<PromptScreen> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            const Icon(
-                              Icons.text_snippet_rounded,
-                              color: Color(0xFFF0F0F0),
+                            GestureDetector(
+                              onTap: _showTextColumn,
+                              child: _showColumn
+                                  ? const Icon(
+                                      Icons.text_snippet_outlined,
+                                      color: Color(0xFFF0F0F0),
+                                    )
+                                  : const Icon(
+                                      Icons.text_snippet_rounded,
+                                      color: Color(0xFFF0F0F0),
+                                    ),
                             ),
                             Text(
                               'Text',
                               style: GoogleFonts.poppins(
                                 fontSize: 12.0,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: _showColumn
+                                    ? FontWeight.w300
+                                    : FontWeight.w600,
                                 color: const Color(0xFFF0F0F0),
                               ),
                             ),
@@ -220,15 +249,25 @@ class _PromptScreenState extends State<PromptScreen> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            const Icon(
-                              Icons.mic_none_outlined,
-                              color: Color(0xFFFFFFFF),
+                            GestureDetector(
+                              onTap: _showSpeechColumn,
+                              child: _showColumn
+                                  ? const Icon(
+                                      Icons.mic_rounded,
+                                      color: Color(0xFFF0F0F0),
+                                    )
+                                  : const Icon(
+                                      Icons.mic_none_outlined,
+                                      color: Color(0xFFF0F0F0),
+                                    ),
                             ),
                             Text(
                               'Speech',
                               style: GoogleFonts.poppins(
                                 fontSize: 12.0,
-                                fontWeight: FontWeight.w300,
+                                fontWeight: _showColumn
+                                    ? FontWeight.w600
+                                    : FontWeight.w300,
                                 color: const Color(0xFFF0F0F0),
                               ),
                             ),
