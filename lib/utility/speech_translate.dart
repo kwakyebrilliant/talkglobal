@@ -10,6 +10,10 @@ class SpeechTranslate extends StatefulWidget {
 class _SpeechTranslateState extends State<SpeechTranslate> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        Center(child: Text('Empty')),
+      ],
+    );
   }
 }
