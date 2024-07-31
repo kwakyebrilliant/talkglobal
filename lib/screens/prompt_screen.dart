@@ -174,7 +174,7 @@ class _PromptScreenState extends State<PromptScreen> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             const Icon(
-                              Icons.chat_bubble_rounded,
+                              Icons.text_snippet_rounded,
                               color: Color(0xFFF0F0F0),
                             ),
                             Text(
