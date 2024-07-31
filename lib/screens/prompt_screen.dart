@@ -185,20 +185,17 @@ class _PromptScreenState extends State<PromptScreen> {
                       ],
                     ),
                     Container(
-                      decoration: BoxDecoration(
-                          color: const Color(0xFF6D1B7B).withOpacity(0.3),
-                          border: Border.all(
-                            width: 0.1,
-                            color: const Color(0xFFFFFFFF),
-                          ),
-                          shape: BoxShape.circle),
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFFFFFFF),
+                        shape: BoxShape.circle,
+                      ),
                       child: IconButton(
                         onPressed: () {},
                         icon: Transform.rotate(
                           angle: -1.56,
-                          child: const Icon(
+                          child: Icon(
                             Icons.send,
-                            color: Color(0xFFFFFFFF),
+                            color: const Color(0xFF6D1B7B).withOpacity(0.8),
                             size: 40.0,
                           ),
                         ),
