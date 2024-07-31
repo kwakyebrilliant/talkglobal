@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:talkglobal/utility/language_dropdown.dart';
-import 'package:talkglobal/utility/translate_container.dart';
+import 'package:talkglobal/utility/text_translate.dart';
 
 class PromptScreen extends StatefulWidget {
   final VoidCallback showHomeScreen;
@@ -116,7 +116,22 @@ class _PromptScreenState extends State<PromptScreen> {
                 ],
               ),
             ),
-            const TranslateContainer(),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12.0),
+                  color: const Color(0xFFFFFFFF),
+                  border: Border.all(
+                    color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                    width: 0.2,
+                  ),
+                ),
+                child: const TextTranslate(),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 20.0, left: 10.0),
               child: Row(
@@ -151,7 +166,22 @@ class _PromptScreenState extends State<PromptScreen> {
                 ],
               ),
             ),
-            const TranslateContainer(),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12.0),
+                  color: const Color(0xFFFFFFFF),
+                  border: Border.all(
+                    color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                    width: 0.2,
+                  ),
+                ),
+                child: const TextTranslate(),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: Row(
