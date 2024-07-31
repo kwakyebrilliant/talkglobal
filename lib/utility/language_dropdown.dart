@@ -61,12 +61,15 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
           return DropdownMenuItem<String>(
             value: country['countryLanguage'],
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(
-                  country['countryImage']!,
-                  width: 24,
-                  height: 24,
-                  fit: BoxFit.cover,
+                ClipOval(
+                  child: Image.asset(
+                    country['countryImage']!,
+                    width: 24,
+                    height: 24,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 const SizedBox(width: 8),
                 Text(
