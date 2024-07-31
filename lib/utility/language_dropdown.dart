@@ -27,9 +27,9 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
   Widget build(BuildContext context) {
     return // Dropdown for country selection
         Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(12.0),
         color: const Color(0xFFFFFFFF),
         border: Border.all(
           color: const Color(0xFF6D1B7B).withOpacity(0.8),
@@ -42,7 +42,7 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
         hint: Text(
           "Select Language",
           style: GoogleFonts.poppins(
-            fontSize: 16.0,
+            fontSize: 14.0,
             color: const Color(0xFF000000),
           ),
         ),
@@ -72,7 +72,7 @@ class _LanguageDropdownState extends State<LanguageDropdown> {
                 Text(
                   country['countryLanguage']!,
                   style: GoogleFonts.poppins(
-                    fontSize: 16.0,
+                    fontSize: 14.0,
                     color: selectedCountry == country['countryLanguage']
                         ? const Color(0xFF000000)
                         : const Color(0xFF6D1B7B).withOpacity(0.8),
