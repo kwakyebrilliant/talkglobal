@@ -11,9 +11,7 @@ class _SpeechTranslateState extends State<SpeechTranslate> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Center(child: Text('Empty')),
-      ],
+      children: [],
     );
   }
 }
