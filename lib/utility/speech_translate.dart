@@ -13,28 +13,45 @@ class _SpeechTranslateState extends State<SpeechTranslate> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          padding: const EdgeInsets.all(12.0),
-          decoration: BoxDecoration(
-            color: const Color(0xFF6D1B7B).withOpacity(0.3),
-            shape: BoxShape.circle,
-          ),
+        Padding(
+          padding: const EdgeInsets.only(top: 16.0),
           child: Container(
-            height: 100.0,
-            width: 100.0,
-            padding: const EdgeInsets.all(2.0),
-            decoration: const BoxDecoration(
-              color: Color(0xFFFFFFFF),
+            padding: const EdgeInsets.all(12.0),
+            decoration: BoxDecoration(
+              color: const Color(0xFF6D1B7B).withOpacity(0.3),
               shape: BoxShape.circle,
             ),
+            child: Container(
+              height: 100.0,
+              width: 100.0,
+              padding: const EdgeInsets.all(2.0),
+              decoration: const BoxDecoration(
+                color: Color(0xFFFFFFFF),
+                shape: BoxShape.circle,
+              ),
 
-            // Arrow forward centered
-            child: Center(
-              // Arrow forward
-              child: Icon(
-                Icons.mic_rounded,
-                size: 60.0,
-                color: const Color(0xFF6D1B7B).withOpacity(0.3),
+              // Arrow forward centered
+              child: Center(
+                // Arrow forward
+                child: Icon(
+                  Icons.mic_rounded,
+                  size: 60.0,
+                  color: const Color(0xFF6D1B7B).withOpacity(0.3),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Container(
+            padding: const EdgeInsets.only(top: 12.0),
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(
+                  color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                  width: 0.2,
+                ),
               ),
             ),
           ),
