@@ -22,6 +22,7 @@ class _SpeechTranslateState extends State<SpeechTranslate> {
             color: const Color(0xFF6D1B7B).withOpacity(0.8),
           ),
         ),
+        // Bottom
         Padding(
           padding: const EdgeInsets.only(top: 15.0),
           child: Container(
