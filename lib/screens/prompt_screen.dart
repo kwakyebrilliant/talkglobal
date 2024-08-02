@@ -45,6 +45,7 @@ class _PromptScreenState extends State<PromptScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Container for text translation and text_field icon
             Container(
               padding:
                   const EdgeInsets.symmetric(vertical: 20, horizontal: 10.0),
@@ -56,9 +57,12 @@ class _PromptScreenState extends State<PromptScreen> {
                   ),
                 ),
               ),
+
+              //  Text translation and text_field icon in a row
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Text translation
                   Text(
                     "Text Translation",
                     style: GoogleFonts.poppins(
@@ -67,6 +71,8 @@ class _PromptScreenState extends State<PromptScreen> {
                       color: const Color(0xFF000000),
                     ),
                   ),
+
+                  // text_field icon
                   const Icon(
                     Icons.text_fields,
                     color: Color(0xFF000000),
@@ -192,6 +198,8 @@ class _PromptScreenState extends State<PromptScreen> {
                 child: const TranslateTo(),
               ),
             ),
+
+            // Container for submit button in padding
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               // Container for submit button
@@ -218,6 +226,7 @@ class _PromptScreenState extends State<PromptScreen> {
             ),
           ],
         ),
+        // Column ends here
       ),
     );
   }
