@@ -44,6 +44,13 @@ class _TranslateToState extends State<TranslateTo> {
                 Icons.copy_all_outlined,
                 color: const Color(0xFF6D1B7B).withOpacity(0.8),
               ),
+              const SizedBox(
+                width: 8.0,
+              ),
+              Icon(
+                Icons.volume_up_outlined,
+                color: const Color(0xFF6D1B7B).withOpacity(0.8),
+              ),
             ],
           ),
         ),
