@@ -97,13 +97,9 @@ class _TranslateFromState extends State<TranslateFrom> {
                   color: const Color(0xFF000000),
                 ),
               ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.volume_up_outlined,
-                    color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                  ),
-                ],
+              Icon(
+                Icons.volume_up_outlined,
+                color: const Color(0xFF6D1B7B).withOpacity(0.8),
               ),
             ],
           ),
