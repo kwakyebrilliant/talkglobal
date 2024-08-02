@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:talkglobal/utility/language_dropdown.dart';
-import 'package:talkglobal/utility/speech_translate.dart';
 import 'package:talkglobal/utility/text_translate.dart';
 
 class PromptScreen extends StatefulWidget {
