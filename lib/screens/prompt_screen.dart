@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:talkglobal/utility/language_dropdown.dart';
-import 'package:talkglobal/utility/text_translate.dart';
+import 'package:talkglobal/utility/translate_from.dart';
+import 'package:talkglobal/utility/translate_to.dart';
 
 class PromptScreen extends StatefulWidget {
   final VoidCallback showHomeScreen;
@@ -130,7 +131,7 @@ class _PromptScreenState extends State<PromptScreen> {
                     width: 0.2,
                   ),
                 ),
-                child: const TextTranslate(),
+                child: const TranslateFrom(),
               ),
             ),
             Padding(
@@ -181,7 +182,7 @@ class _PromptScreenState extends State<PromptScreen> {
                     width: 0.2,
                   ),
                 ),
-                child: const TextTranslate(),
+                child: const TranslateTo(),
               ),
             ),
             Padding(
