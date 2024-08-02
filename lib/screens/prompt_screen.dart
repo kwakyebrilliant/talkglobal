@@ -14,15 +14,18 @@ class PromptScreen extends StatefulWidget {
 }
 
 class _PromptScreenState extends State<PromptScreen> {
+  // Variables
   String? selectedCountryFrom;
   String? selectedCountryTo;
 
+  // Function to update the state of the slected langauge from
   void _handleLanguageChangeFrom(String? newCountry) {
     setState(() {
       selectedCountryFrom = newCountry;
     });
   }
 
+  // Function to update the state of the slected langauge to
   void _handleLanguageChangeTo(String? newCountry) {
     setState(() {
       selectedCountryTo = newCountry;
@@ -33,8 +36,12 @@ class _PromptScreenState extends State<PromptScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF0F0F0),
+
+      // Padding around contents
       body: Padding(
         padding: const EdgeInsets.only(top: 50.0, left: 16.0, right: 16.0),
+
+        // Column starts here
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
