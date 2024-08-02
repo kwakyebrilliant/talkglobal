@@ -106,8 +106,12 @@ class _PromptScreenState extends State<PromptScreen> {
                 ],
               ),
             ),
+
+            // Padding around the selected language from
             Padding(
               padding: const EdgeInsets.only(top: 20.0, left: 10.0),
+
+              // The selected language from in a row
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -140,8 +144,12 @@ class _PromptScreenState extends State<PromptScreen> {
                 ],
               ),
             ),
+
+            // Padding around the container for translate from
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
+
+              // Container for translate from
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 223.0,
@@ -157,8 +165,12 @@ class _PromptScreenState extends State<PromptScreen> {
                 child: const TranslateFrom(),
               ),
             ),
+
+            // Padding around the selected language to
             Padding(
               padding: const EdgeInsets.only(top: 20.0, left: 10.0),
+
+              // The selected language to in a row
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -191,8 +203,12 @@ class _PromptScreenState extends State<PromptScreen> {
                 ],
               ),
             ),
+
+            // Padding around the selected language to
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
+
+              // Container for translate to
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 223.0,
