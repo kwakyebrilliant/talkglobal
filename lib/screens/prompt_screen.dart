@@ -81,17 +81,27 @@ class _PromptScreenState extends State<PromptScreen> {
                 ],
               ),
             ),
+
+            // Padding around language dropdowns and swap_horiz icon
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
+
+              // language dropdowns and swap_horiz icon in a row
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // language dropdown from
+
                   LanguageDropdown(
                       onLanguageChanged: _handleLanguageChangeFrom),
+
+                  // Swap_horiz icon
                   Icon(
                     Icons.swap_horiz_rounded,
                     color: const Color(0xFF6D1B7B).withOpacity(0.3),
                   ),
+
+                  // language dropdowns to
                   LanguageDropdown(onLanguageChanged: _handleLanguageChangeTo),
                 ],
               ),
