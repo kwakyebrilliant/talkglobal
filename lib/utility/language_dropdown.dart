@@ -13,14 +13,19 @@ class LanguageDropdown extends StatefulWidget {
 
 class _LanguageDropdownState extends State<LanguageDropdown> {
   final List<Map<String, String>> languageData = [
-    {'countryLanguage': 'USA', 'countryImage': 'assets/images/usa.png'},
-    {'countryLanguage': 'Russia', 'countryImage': 'assets/images/russia.png'},
-    {'countryLanguage': 'Italy', 'countryImage': 'assets/images/italy.png'},
-    {'countryLanguage': 'Germany', 'countryImage': 'assets/images/germany.png'},
-    {'countryLanguage': 'France', 'countryImage': 'assets/images/france.png'},
-    {'countryLanguage': 'China', 'countryImage': 'assets/images/china.png'},
-    {'countryLanguage': 'England', 'countryImage': 'assets/images/britain.png'},
-    {'countryLanguage': 'Saudi', 'countryImage': 'assets/images/arabic.png'},
+    {
+      'countryLanguage': 'English - US',
+      'countryImage': 'assets/images/usa.png'
+    },
+    {
+      'countryLanguage': 'English - UK',
+      'countryImage': 'assets/images/britain.png'
+    },
+    {'countryLanguage': 'Russian', 'countryImage': 'assets/images/russia.png'},
+    {'countryLanguage': 'Italian', 'countryImage': 'assets/images/italy.png'},
+    {'countryLanguage': 'German', 'countryImage': 'assets/images/germany.png'},
+    {'countryLanguage': 'French', 'countryImage': 'assets/images/france.png'},
+    {'countryLanguage': 'Spanish', 'countryImage': 'assets/images/spain.png'},
   ];
 
   String? selectedCountry;

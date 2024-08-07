@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:talkglobal/utility/language_dropdown.dart';
 import 'package:talkglobal/utility/translate_from.dart';
 import 'package:talkglobal/utility/translate_to.dart';
@@ -17,6 +19,9 @@ class _PromptScreenState extends State<PromptScreen> {
   // Variables
   String? selectedCountryFrom;
   String? selectedCountryTo;
+  TextEditingController controller = TextEditingController();
+  String _translatedText = '';
+  bool _loading = false;
 
   // Function to update the state of the slected langauge from
   void _handleLanguageChangeFrom(String? newCountry) {
@@ -30,6 +35,67 @@ class _PromptScreenState extends State<PromptScreen> {
     setState(() {
       selectedCountryTo = newCountry;
     });
+  }
+
+  Future<void> _translateText() async {
+    final apiKey = dotenv.env['API_KEY'];
+    if (apiKey == null) {
+      print('No API_KEY environment variable');
+      return;
+    }
+
+    final inputText = controller.text;
+    final fromLang = selectedCountryFrom;
+    final toLang = selectedCountryTo;
+
+    // Validation checks
+    if (inputText.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('What are you translating?')),
+      );
+      return;
+    }
+
+    if (fromLang == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('What language are you translating from?')),
+      );
+      return;
+    }
+
+    if (toLang == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('What language are you translating to?')),
+      );
+      return;
+    }
+
+    setState(() {
+      _loading = true;
+    });
+
+    try {
+      final model = GenerativeModel(model: 'gemini-1.5-flash', apiKey: apiKey);
+      final content = [
+        Content.text('Translate only "$inputText" from $fromLang to $toLang')
+      ];
+      final response = await model.generateContent(content);
+
+      setState(() {
+        _translatedText = response.text!;
+      });
+
+      print('$_translatedText');
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Failed to translate text')),
+      );
+    } finally {
+      setState(() {
+        _loading = false;
+      });
+    }
   }
 
   @override
@@ -162,7 +228,7 @@ class _PromptScreenState extends State<PromptScreen> {
                     width: 0.2,
                   ),
                 ),
-                child: const TranslateFrom(),
+                child: TranslateFrom(controller: controller),
               ),
             ),
 
@@ -221,30 +287,49 @@ class _PromptScreenState extends State<PromptScreen> {
                     width: 0.2,
                   ),
                 ),
-                child: const TranslateTo(),
+                child: _loading
+                    ? Center(
+                        child: Container(
+                          padding: const EdgeInsets.all(12.0),
+                          height: 50.0,
+                          width: 50.0,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                            shape: BoxShape.circle,
+                          ),
+                          child: const CircularProgressIndicator(
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ),
+                      )
+                    : TranslateTo(translatedText: _translatedText),
               ),
             ),
 
             // Container for submit button in padding
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
-              // Container for submit button
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 15.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: const Color(0xFF6D1B7B).withOpacity(0.8),
-                ),
+              child: GestureDetector(
+                onTap: _translateText,
 
-                // Submit text centered
-                child: Center(
-                  // Submit text here
-                  child: Text(
-                    'Submit',
-                    style: GoogleFonts.inter(
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xFFFFFFFF),
+                // Container for submit button
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 15.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: const Color(0xFF6D1B7B).withOpacity(0.8),
+                  ),
+
+                  // Submit text centered
+                  child: Center(
+                    // Submit text here
+                    child: Text(
+                      'Submit',
+                      style: GoogleFonts.inter(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFFFFFFFF),
+                      ),
                     ),
                   ),
                 ),
