@@ -228,6 +228,8 @@ class _PromptScreenState extends State<PromptScreen> {
                     width: 0.2,
                   ),
                 ),
+
+                // Translatefrom class here
                 child: TranslateFrom(controller: controller),
               ),
             ),
