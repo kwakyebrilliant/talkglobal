@@ -5,7 +5,7 @@
   <p align="center">
     Language Translation Application with Flutter and AI (utilizing Google Generative AI API - Gemini)🌍
     <br />
-    <a href="https://www.youtube.com/watch?v=bxfhe53lTmk"><strong>Youtube Tutorial »</strong></a>
+    <a href="https://www.youtube.com/watch?v=m0LdDzIekUE"><strong>Youtube Tutorial »</strong></a>
     <br />
     <br />
     
